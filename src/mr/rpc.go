@@ -6,7 +6,10 @@ package mr
 // remember to capitalize all names.
 //
 
-import "os"
+import (
+	"os"
+	"time"
+)
 import "strconv"
 
 //
@@ -24,6 +27,50 @@ type ExampleReply struct {
 
 // Add your RPC definitions here.
 
+type JobType int
+
+const (
+	_ JobType = iota
+	MapJob
+	ReduceJob
+	WaitJob
+	CompleteJob
+)
+
+type TaskStatus int
+
+const (
+	_ TaskStatus = iota
+	Waiting
+	Doing
+	Success
+)
+
+type Task struct {
+	fileName  string
+	id        int
+	startTime time.Time
+	status    TaskStatus
+}
+
+type HeartbeatRequest struct {
+}
+
+type HeartbeatResponse struct {
+	JobType  JobType
+	FileName string
+	NReduce  int
+	TaskId   int
+}
+
+type ReportRequest struct {
+	JobType    JobType
+	TaskId     int
+	TaskStatus TaskStatus
+}
+
+type ReportResponse struct {
+}
 
 // Cook up a unique-ish UNIX-domain socket name
 // in /var/tmp, for the coordinator.
