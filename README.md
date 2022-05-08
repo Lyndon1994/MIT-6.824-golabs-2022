@@ -12,3 +12,9 @@ B站视频： [2020 MIT 6.824 分布式系统_哔哩哔哩_bilibili](https://www
 
 答案： [https://github.com/OneSizeFitsQuorum/MIT6.824-2021](https://github.com/OneSizeFitsQuorum/MIT6.824-2021)
 
+## 完成度
+
+- [x] Lab 1 
+- [ ] Lab 2
+- [ ] Lab 3
+- [ ] Lab 4
